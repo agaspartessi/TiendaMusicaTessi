@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-bag{
+  display:flex;
+  align-items:center;
+}
+
+.bag-quantity{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: yellow;
+
+}
+
+
+
