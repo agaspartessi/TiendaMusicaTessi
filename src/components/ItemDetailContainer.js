@@ -11,12 +11,12 @@ const ItemDetailContainer = () => {
         setTimeout(() => {
             
             resolve(prod[0]);
-        }, 1000)
+        }, 2000)
     })
 
 
     useEffect(() => {
-        getItem.then(res => setItems(res)).catch(e => console.log(e));
+        getItem.then(data => setItems(data)).catch(err => console.log(err));
     }, [])
 
 
