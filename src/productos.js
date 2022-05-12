@@ -1,6 +1,6 @@
 import bajo from './bajo.jpg';
 import guitarra from './guitarra.jpg';
-import bateria from './bateria.jpg'
+import bateria from './bateria.jpg';
 
 export const prod = [
     {
@@ -8,7 +8,8 @@ export const prod = [
         name: 'Guitarra',
         price: '100',
         image: guitarra,
-        stock:'30'
+        stock:'30',
+        description:'Esta es una guitarra cara'
 
     },
     {
@@ -16,7 +17,8 @@ export const prod = [
         name: 'Bateria',
         price: '200',
         image: bateria,
-        stock:'20'
+        stock:'20',
+        description:'Esta es una bateria cara'
 
     },
     {
@@ -24,7 +26,8 @@ export const prod = [
         name: 'Bajo',
         price: '300',
         image: bajo,
-        stock:'10'
+        stock:'10',
+        description:'Esta es un bajo caro'
 
     },
 
