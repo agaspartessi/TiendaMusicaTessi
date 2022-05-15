@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
 
-export default class CardWidget extends Component {
-    render(){
+
+const CartWidget = () => {
+
         return(
             <div className="nav-bag" >
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-handbag-fill" viewBox="0 0 16 16">
@@ -12,6 +12,7 @@ export default class CardWidget extends Component {
             </span>
           </div>
         );
-    } 
+    
 
 }
+export default CartWidget;

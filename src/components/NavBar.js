@@ -1,27 +1,21 @@
-import React, { Component } from 'react';
-import { Navbar,Nav,NavDropdown,Form ,FormControl,Button } from 'react-bootstrap';
+import React from 'react';
+import { Navbar,Nav } from 'react-bootstrap';
 import CartWidget from './CartWidget';
+import "./NavBar.css";
 
 
-export default class NavBar extends Component {
-    render(){
+const NavBar = () =>{
         return(
             <div>
             <Navbar bg="light" expand="lg">
 
-              <Navbar.Brand href="#home">La Pentatonica Música</Navbar.Brand>
+              <Navbar.Brand href="/">La Pentatonica Música</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="me-auto">
-                  <Nav.Link href="#inicio">Inicio</Nav.Link>
-                  <Nav.Link href="#ubicacion">¿Dónde estamos?</Nav.Link>
-                <NavDropdown title="Instrumentos" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Guitarras</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Pianos</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Baterias</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Ofertas</NavDropdown.Item>
-                </NavDropdown>
+                  <Nav className="me-auto"> 
+                  <Nav.Link href="/category/guitarra">Guitarras</Nav.Link>
+                  <Nav.Link href="/category/bateria">Baterias</Nav.Link>
+                  <Nav.Link href="/category/bajo">Bajos</Nav.Link>
                 </Nav>
               </Navbar.Collapse>
               <Nav.Link href="#cart">
@@ -33,5 +27,9 @@ export default class NavBar extends Component {
         
         );
         
-    }
 }
+export default NavBar ; 
+/*
+                  <Nav.Link href="/category/guitarras">Guitarras</Nav.Link>
+                  <Nav.Link href="/category/baterias">Baterias</Nav.Link>
+                  <Nav.Link href="/category/bajos">Bajos</Nav.Link>*/

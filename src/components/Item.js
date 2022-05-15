@@ -1,18 +1,23 @@
 import React from 'react';
 import "./Item.css";
-import ItemCount from "./ItemCount";
+import { Link } from 'react-router-dom';
 
-const Item = ({item}) => {
-    const {name, price, image, stock} = item ;
-    return(
-        <div className="item-product">
-            <img className="tamanioimagen" src={image} alt={name} />
-            <h5> {name}</h5>
-            <h6>{price}</h6>
-            <ItemCount initial="1" stock={stock}></ItemCount>
-            
+const Item = ({ product }) => {
+    return (
+        <div >
+            <div>
+            <img src={product.image} alt="Imagen" className='tamanioimagen'/>
+            </div>
+            <div>
+                <h3>{product.name}</h3>
+                <h4>$ {product.price}</h4>
+
+                <Link to={`/item/${product.id}`}>
+                    <button >Ver detalles</button>
+                </Link>
+            </div>
         </div>
     );
-}
+};
 
 export default Item;

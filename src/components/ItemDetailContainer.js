@@ -1,23 +1,26 @@
 import { useState, useEffect } from "react";
-import {prod} from '../productos.js';
+import {products} from '../productos.js';
 import ItemDetail from "./ItemDetail";
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
     const [items, setItems] = useState([]);
-
+    const { itemId } = useParams();
+    console.log({ itemId });
 
     const getItem = new Promise((resolve, reject) => {
         setTimeout(() => {
-            
-            resolve(prod[0]);
+            const posArray = products.findIndex(element => element.id == itemId );
+            console.log(posArray);
+           resolve(products[posArray]);
         }, 2000)
     })
 
 
     useEffect(() => {
         getItem.then(data => setItems(data)).catch(err => console.log(err));
-    }, [])
+    }, [itemId])
 
 
     return(

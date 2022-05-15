@@ -25,6 +25,8 @@ const ItemCount = (props) => {
           <button onClick={menorquecero}>-</button>
           <span>{count}</span>
           <button onClick={sumarcarrito}>+</button>
+          <br></br>
+          <button>Agregar al carrito</button>
       </div>
   )
 }

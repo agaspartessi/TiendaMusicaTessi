@@ -1,32 +1,28 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import {prod} from '../productos.js';
+import { traerProductos } from '../productos.js';
 import ItemList from './ItemList';
-
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = () => {
-    const [items, setItems] = useState([]);
+    const [products, setProducts] = useState([]);
 
-    useEffect (() => {
-        setTimeout (() => {
-        const data = new Promise((resolve,reject) => {
-            resolve(prod);
-        });
-        data.then((data) => {
-            setItems(data);
-        });
-        data.catch((err) => {
-            console.log(err);
-        });
-}, 2000);
-}, []);
+    const { categoryId } = useParams();
 
-    return (<div>  
-        <ItemList items={items} />
-     
-    </div>
+    useEffect(() => {
+        traerProductos(categoryId)
+            .then((res) => {
+                setProducts(res);
+            })
+            .catch((error) => console.log(error));
+    }, [categoryId]);
+
+    return (
+        <div>
+            <ItemList products={products} />
+        </div>
     );
 };
 
-export default ItemListContainer ;
+export default ItemListContainer;
