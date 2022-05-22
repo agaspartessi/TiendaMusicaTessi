@@ -4,12 +4,15 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import CartContextProvider from './components/CartContext';
 
 
 
 
 function App() {
   return (
+    <>
+    <CartContextProvider>
     <BrowserRouter>
         <NavBar></NavBar>  
         <Routes>
@@ -18,6 +21,8 @@ function App() {
           <Route path='/item/:itemId' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
         </Routes>
     </BrowserRouter>
+    </CartContextProvider>
+    </>
   );
 }
 

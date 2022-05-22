@@ -1,13 +1,14 @@
-import { useState} from "react";
+import { useState, useContext} from "react";
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import { CartContext } from "./CartContext";
 
-const ItemCount = ({id, stock, name, onAdd}) => {
+const ItemCount = ({id, name, price, stock, onAdd}) => {
 //Indico la cantidad inicial
   const [count, setCount] = useState(1);
 
-
+  const { addToCart } = useContext(CartContext);
 
   const sumarcarrito = () => {
       
@@ -35,6 +36,7 @@ const ItemCount = ({id, stock, name, onAdd}) => {
           <button onClick={sumarcarrito}>+</button>
           <br></br>
           <Button onClick={()=>{handleShow();
+                                addToCart({id, name, price, count, stock});
                                 setCount(1);
                                 onAdd(count);
                                 }}>                                  
