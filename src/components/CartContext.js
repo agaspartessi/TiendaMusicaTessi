@@ -30,6 +30,7 @@ export default function CartContextProvider ({children}) {
     //comprar y resetear el array con los items
     const vaciarCarrito = () => {console.log(setCart([]))};
 
+
        //sumar precio de todos los items 
        const [precioTotal, setPrecioTotal] = useState(0);
 
@@ -48,7 +49,7 @@ export default function CartContextProvider ({children}) {
        console.log(precioTotal);
 
         //sumar la cantidad total de productos
-        const cantidadTotal= ()=> (cart.reduce((total, item)=> total+= item.count, 0));
+        const cantidadTotal = ()=> (cart.reduce((total, item)=> total+= item.count, 0));
         
         useEffect(()=>{
 
