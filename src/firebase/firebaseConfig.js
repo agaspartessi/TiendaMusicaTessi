@@ -1,6 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDfhk3dVd3VFidhVc8UaY_4sBnNDGisFxE",
@@ -15,3 +16,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
+
+export const coleccionProductos = collection( db, 'instrumentos2');

@@ -17,14 +17,14 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         const getItem = async () => {
-            const q = query(collection(db, "instrumentos"));
+            const q = query(collection(db, "instrumentos2"));
             const docs = [];
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
               docs.push({ ...doc.data(), id: doc.id });
             });
             setProducts(docs);
-            setAllProducts(docs);
+          //  setAllProducts(docs);
             if (category.categoryId === undefined) {
               setProducts(docs);
               setTimeout(() => {
@@ -43,7 +43,7 @@ const ItemListContainer = () => {
 
     return (
         <div>
-            <ItemList products={products} loading={loading} />
+            <ItemList products={products} />
         </div>
     );
 };
