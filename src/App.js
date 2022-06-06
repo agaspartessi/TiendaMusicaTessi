@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import CartContextProvider from './components/CartContext';
 import Cart from './components/Cart';
 import React from 'react';
+import OrderForm from './components/OrderForm';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <NavBar></NavBar>  
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
+          <Route exact path="/orderform" element={<OrderForm />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route path='/category/:categoryId' element={<ItemListContainer></ItemListContainer>}></Route>
           <Route path='/item/:itemId' element={<ItemDetailContainer></ItemDetailContainer>}></Route>

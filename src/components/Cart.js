@@ -45,8 +45,10 @@ export default function Cart() {
         {cart.length >= 1 ? 
             <div >
                 <p><b>Precio Total: </b>$ {precioTotal}</p>
-                <p><b>Cantidad Total: </b>{cantidadTotal()}</p>           
-                <button type="button" onClick={()=>comprarTodo()}>Comprar</button>             
+                <p><b>Cantidad Total: </b>{cantidadTotal()}</p>  
+                <Link to= {"/orderform"}>        
+               <button type="button" >Comprar</button>   
+                </Link>          
             </div>  :
             <div></div>     
         }
