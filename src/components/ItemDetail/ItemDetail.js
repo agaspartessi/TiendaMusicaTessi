@@ -1,6 +1,6 @@
 import React from 'react';
-import "./Item.css";
-import ItemCount from './ItemCount';
+import "../Item/Item.css";
+import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 
 const ItemDetail = ({item}) => {

@@ -3,7 +3,8 @@ import "./Item.css";
 import { Link } from 'react-router-dom';
 
 const Item = ({ product }) => {
-    return (
+
+  return (
         <div >
             <div>
             <img src={product.image} alt="Imagen" className='tamanioimagen'/>
@@ -15,7 +16,8 @@ const Item = ({ product }) => {
                 <Link to={`/item/${product.id}`}>
                     <button >Ver detalles</button>
                 </Link>
-            </div>
+                </div>
+            
         </div>
     );
 };

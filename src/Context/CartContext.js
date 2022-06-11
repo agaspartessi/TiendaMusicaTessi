@@ -28,7 +28,7 @@ export default function CartContextProvider ({children}) {
     const removerItem = (id) => {setCart(cart.filter((r) => r.id !== id))};
 
     //comprar y resetear el array con los items
-    const vaciarCarrito = () => {console.log(setCart([]))};
+    const vaciarCarrito = () => {setCart([])};
 
 
        //sumar precio de todos los items 

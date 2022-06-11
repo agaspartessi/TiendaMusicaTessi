@@ -2,7 +2,7 @@ import { useState, useContext} from "react";
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import { CartContext } from "./CartContext";
+import { CartContext } from "../../Context/CartContext";
 
 const ItemCount = ({id, name, price, stock, onAdd}) => {
 //Indico la cantidad inicial

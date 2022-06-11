@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "./CartContext";
-import "./Item.css";
+import { CartContext } from "../../Context/CartContext";
+import "./Cart.css"
 
 export default function Cart() {
 
-    const {cart, removerItem, comprarTodo, precioTotal, cantidadTotal } = useContext(CartContext);
+    const {cart, removerItem, vaciarCarrito, precioTotal, cantidadTotal } = useContext(CartContext);
 
     console.log(cart);
 
@@ -15,7 +15,7 @@ export default function Cart() {
     return (
         <>
        
-        <h2 className="">Mi carrito de compras</h2>
+        <h2 className="alineacion">Mi carrito de compras</h2>
 
         {/*tu carrito esta vacío */}
 
@@ -36,19 +36,24 @@ export default function Cart() {
                 </ul>  
             </div>))   : 
 
-            <div className="">
+            <div className="alineacion">
                 <h2>Tu Carrito está vacío</h2>
                 <Link to= {"/"} >Ir a Tienda</Link>
             </div>
         }
 
         {cart.length >= 1 ? 
-            <div >
+            <div className="alineacion">
                 <p><b>Precio Total: </b>$ {precioTotal}</p>
                 <p><b>Cantidad Total: </b>{cantidadTotal()}</p>  
                 <Link to= {"/orderform"}>        
-               <button type="button" >Comprar</button>   
-                </Link>          
+               <button type="button" className="btn btn-success">Comprar</button>   
+                </Link>  
+                <br></br>
+                <br></br>
+                <button className="btn btn-danger" onClick={() => vaciarCarrito()}>
+              Vaciar carrito
+            </button>        
             </div>  :
             <div></div>     
         }

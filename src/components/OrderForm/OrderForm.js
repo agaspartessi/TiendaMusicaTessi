@@ -1,8 +1,8 @@
-import "./Item.css";
+import "../Item/Item.css";
 import React, { useState, useContext } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase/firebaseConfig";
-import {CartContext} from "./CartContext";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
+import {CartContext} from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 
 const initialState = {
@@ -42,6 +42,7 @@ const OrderForm = () => {
           totalProducPrice: prod.count * prod.price,
         };
       }),
+      date: serverTimestamp(),
       userInfo: userInfo,
       total: precioTotal,
     };
