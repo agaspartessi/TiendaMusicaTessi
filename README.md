@@ -1,4 +1,5 @@
 # Tienda Musical La Pentatonica - Curso CoderHouse
+![tessi_recorrido_tienda_musica](https://user-images.githubusercontent.com/104112475/173254049-dd281864-339b-4076-a704-ab65e20096c4.gif)
 
 Curso de React JS en el cual se realiza una tienda web.
 

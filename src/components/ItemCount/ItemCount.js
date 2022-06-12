@@ -62,32 +62,7 @@ const ItemCount = ({id, name, price, stock, onAdd}) => {
       </Modal>
       </>
   )
-/*
-  return(
-      <div>
-          <button onClick={menorquecero}>-</button>
-          <span>{count}</span>
-          <button onClick={sumarcarrito}>+</button>
-          <br></br>
-          <Button onClick={()=>{handleShow();
-                                addToCart({id, name, price, count, stock});
-                                setCount(1);
-                                onAdd(count);
-                                }}>                                  
-          Agregar al carrito
-        </Button>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Tienda Música Tessi</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Agregaste el instrumento {name} al carrito.</Modal.Body>
-          <Modal.Footer>
-          <Link to={"/cart"}>Ver carrito</Link>
-          </Modal.Footer>
-        </Modal>
-          
-      </div>
-  )*/
+
 }
 
 export default ItemCount;
