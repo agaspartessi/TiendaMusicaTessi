@@ -1,14 +1,67 @@
-# NavBar realizado con React Bootstrap por eso tiene href en lugar de Link, es el unico contexto donde se usa la librería de Bootstrap
+# Tienda Musical La Pentatonica - Curso CoderHouse
 
-# CartWidget.js se encuentra en el NavBar.js pero aún no es funcional ya que no lo vimos en clase
+Curso de React JS en el cual se realiza una tienda web.
 
-# Se utilizan pequeños estilados tanto para ItemList, como para Item, como para NavBar cada uno con su respectivo CSS
+***
+***
 
-# Desde el NavBar por las distintas categorías Bajo Guitarra Bateria o ir a la home haciendo clic en La pentatonica musica
+## Dependencias Descargadas
+***
 
-# Desde ItemListContainer podemos ver detalle de cada Item dinamicamente usando ItemDetailContainer.js donde nos muestra la imagen completa, una descripción, cuantos elementos quedan y nos permite agregar al carrito con tope en el stock (la función de agregar al carrito aun no la vimos así que ese botón no hace nada), para seleccionar la cantidad usamos ItemCount.Js dentro de ItemDetail.js
+- React-Bootstrap
+  
+> Utilizado para Cards, Navbar, Modal, Spinner.
+> Darle estilo.
+> La tienda es responsive.
+  
+- Fontawesome
 
-# Los objetos/productos estan en un array en productos.js , para los id se usaron numeros aleatorios que no sean consecutivos para realizar pruebas y evitar bugs
+> Para íconos.
 
-# GitHub en TiendaMusicaTessi
-https://github.com/agaspartessi/TiendaMusicaTessi
+- React-Router-Dom
+  
+  Se utiliza react-router-dom para controlar las rutas navegables de la aplicación.
+
+- Firebase
+  
+  Se utiliza firebase como conexión a la db de los productos y ordenes de compra.
+
+## Módulos y Hooks utilizados
+***
+1. useState:
+
+    Usado para generar estados locales de nuestro componente y así guardarlos y modificarlos posteriormente.
+
+2. useEffect:
+
+    Usado para montar y hacer un render de los componentes solo cuando es necesario mostrarlos.
+
+3. useParam:
+
+    Usado para capturar lo enviado por la url.
+
+4. BrowserRouter, Routes y Route:
+
+    HOC que engloba a otros componentes y definimos las rutas navegables de nuestra aplicación.
+    
+5. Firebase:
+
+    Se utiliza Firebase y Firestore para la gestión de la base de datos y su respuesta en las peticiones asincronas.
+
+## Para poder ver la aplicación desde localhost
+***
+1. Desde la opción Code descargamos el zip con todo el contenido de la Tienda:
+
+    https://github.com/agaspartessi/TiendaMusicaTessi
+
+2. Luego lo descomprimimos en una carpeta destino:
+
+
+3. Abrimos nuestra consola (Por ejemplo Git Bash) navegamos a nuestra carpeta raiz del proyecto y en la consola ejecutamos:
+
+    npm install
+
+4. Finalmente en la misma consola ejecutamos el siguiente comando para levantar nuestro servidor de react:
+
+    npm start
+
