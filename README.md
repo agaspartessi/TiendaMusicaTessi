@@ -11,7 +11,7 @@ Curso de React JS en el cual se realiza una tienda web.
 
 - React-Bootstrap
   
-> Utilizado para Cards, Navbar, Modal, Spinner.
+> Utilizado para Cards, Navbar, Modal.
 > Darle estilo.
 > La tienda es responsive.
   
