@@ -102,7 +102,7 @@ const OrderForm = () => {
           <label htmlFor="floatingLastName">Apellido</label>
         </div>
         <div className="form-floating mb-3 inputContainer">
-          <input onclick="ValidateEmail(document.form1.text1)"
+          <input 
             type="text"
             name="email"
             value={userInfo.email}
