@@ -1,4 +1,4 @@
-import "../Item/Item.css";
+import "./OrderForm.css";
 import React, { useState, useContext } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const initialState = {
   name: "",
   lastName: "",
-  address: "",
+  email: "",
   tel: "",
 };
 
@@ -103,14 +103,14 @@ const OrderForm = () => {
         <div className="form-floating mb-3 inputContainer">
           <input
             type="text"
-            name="address"
-            value={userInfo.address}
+            name="email"
+            value={userInfo.email}
             onChange={getInfo}
             className="form-control"
             id="floatingAddress"
-            placeholder="Address"
+            placeholder="Email"
           />
-          <label htmlFor="floatingAddress">Direccion</label>
+          <label htmlFor="floatingAddress">email</label>
         </div>
         <div className="form-floating mb-3 inputContainer">
           <input

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
+import "./Cart.css"
 
 
 
@@ -15,7 +16,7 @@ export default function CartWidget () {
         <>
         {/* Condicional para mostrar el contador sólo si tiene productos */}
         {cart.length === 0 ? (
-        <div className= "">
+        <div className= "icono-carrito">
             <Link to='/cart'>
                 <FontAwesomeIcon 
                     icon={faBagShopping} 
@@ -24,7 +25,7 @@ export default function CartWidget () {
             </Link>
         </div>) : (
             
-            <div className= "">
+            <div className= "icono-carrito">
                 <Link to='/cart'>               
                     <FontAwesomeIcon 
                         icon={faBagShopping} 
