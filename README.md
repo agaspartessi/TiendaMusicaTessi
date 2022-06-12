@@ -52,7 +52,7 @@ Curso de React JS en el cual se realiza una tienda web.
 
     https://github.com/agaspartessi/TiendaMusicaTessi
 
-2. Luego lo descomprimimos en una carpeta destino:
+2. Luego lo descomprimimos en la carpeta destino en nuestro disco local.
 
 
 3. Abrimos nuestra consola (Por ejemplo Git Bash) navegamos a nuestra carpeta raiz del proyecto y en la consola ejecutamos:
