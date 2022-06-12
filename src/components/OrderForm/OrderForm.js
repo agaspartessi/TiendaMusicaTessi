@@ -12,6 +12,7 @@ const initialState = {
   tel: "",
 };
 
+
 const OrderForm = () => {
     const { cart, precioTotal, vaciarCarrito } = useContext(CartContext);
 
@@ -101,7 +102,7 @@ const OrderForm = () => {
           <label htmlFor="floatingLastName">Apellido</label>
         </div>
         <div className="form-floating mb-3 inputContainer">
-          <input
+          <input onclick="ValidateEmail(document.form1.text1)"
             type="text"
             name="email"
             value={userInfo.email}
@@ -110,7 +111,7 @@ const OrderForm = () => {
             id="floatingAddress"
             placeholder="Email"
           />
-          <label htmlFor="floatingAddress">email</label>
+          <label htmlFor="floatingAddress">Email</label>
         </div>
         <div className="form-floating mb-3 inputContainer">
           <input
