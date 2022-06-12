@@ -1,0 +1,11 @@
+.card-producto {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-loading {
+    color: rgb(165, 113, 165);
+    text-align: center;
+  }

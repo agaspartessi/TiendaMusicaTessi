@@ -16,8 +16,8 @@ const NavBar = () =>{
                   <Nav className="me-auto"> 
                   <Link to={"/"} style={{margin: '1rem',textDecoration:'none', color:'gray'}}>Inicio</Link>
                   <Link to={"/category/guitarra"} style={{margin: '1rem',textDecoration:'none', color:'gray'}}>Guitarras</Link>
-                  <Link to={"/category/bateria"} style={{margin: '1rem',textDecoration:'none', color:'gray'}}>Bateria</Link>         
-                  <Link to={"/category/bajo"} style={{margin: '1rem',textDecoration:'none', color:'gray'}}>Bajo</Link> 
+                  <Link to={"/category/bateria"} style={{margin: '1rem',textDecoration:'none', color:'gray'}}>Baterias</Link>         
+                  <Link to={"/category/bajo"} style={{margin: '1rem',textDecoration:'none', color:'gray'}}>Bajos</Link> 
                 </Nav>
               </Navbar.Collapse>
                 <CartWidget></CartWidget>

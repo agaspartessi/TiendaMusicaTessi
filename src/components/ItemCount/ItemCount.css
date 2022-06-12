@@ -1,0 +1,42 @@
+/* Estilo Itemcount */
+.contenedor-botones {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  .botones-itemcount {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0.829);
+    border: 1px solid rgba(0, 0, 0, 0.829);
+    border-radius: 5px;
+  }
+  .botones-itemcount:hover {
+    background-color: rgba(0, 0, 0, 0.856);
+  }
+  .cantidad-itemcount {
+    width: 105px;
+    height: 40px;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+/*Ver carrito */
+  .ver-carrito {
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    width: 200px;
+    height: 40px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  .ver-carrito:hover {
+    background-color: rgb(189, 139, 189);
+    color: black;
+  }

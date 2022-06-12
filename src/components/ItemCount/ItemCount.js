@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { CartContext } from "../../Context/CartContext";
+import "./ItemCount.css"
 
 const ItemCount = ({id, name, price, stock, onAdd}) => {
 //Indico la cantidad inicial
@@ -29,6 +30,39 @@ const ItemCount = ({id, name, price, stock, onAdd}) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    return (
+      <>
+     <div>
+          <div className="contenedor-botones">
+              <button className="botones-itemcount" onClick={menorquecero}>-</button>
+              <p className="cantidad-itemcount">{count}</p>
+              <button className="botones-itemcount" onClick={sumarcarrito}>+</button>
+          </div>
+          <div className="contenedor-botones">
+      <Button variant="dark" size="lg" onClick={()=>{handleShow();
+                                         addToCart({id, name, price, count, stock});
+                                          setCount(1);
+                                          onAdd(count);
+                                      }}>
+        Agregar al carrito
+      </Button>
+      </div>
+      </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>La Pentatonica Música</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Agregaste {name} al carrito.</Modal.Body>
+        <Modal.Footer>
+        <Link to={"/cart"} className="ver-carrito">Ver carrito</Link>
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      </>
+  )
+/*
   return(
       <div>
           <button onClick={menorquecero}>-</button>
@@ -53,7 +87,7 @@ const ItemCount = ({id, name, price, stock, onAdd}) => {
         </Modal>
           
       </div>
-  )
+  )*/
 }
 
 export default ItemCount;
