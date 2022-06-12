@@ -40,9 +40,7 @@ Curso de React JS en el cual se realiza una tienda web.
 
     Usado para capturar lo enviado por la url.
 
-4. BrowserRouter, Routes y Route:
-
-    HOC que engloba a otros componentes y definimos las rutas navegables de nuestra aplicación.
+4. BrowserRouter, Routes y Route.
     
 5. Firebase:
 
