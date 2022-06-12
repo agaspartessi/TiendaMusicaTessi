@@ -13,11 +13,13 @@ import OrderForm from './components/OrderForm/OrderForm';
 
 
 function App() {
+  let tienda = 'La Pentatonica Música';
   return (
     <>
     <CartContextProvider>
     <BrowserRouter>
         <NavBar></NavBar>  
+        <h1 className='titulo-principal'>{tienda}</h1>
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
           <Route exact path="/orderform" element={<OrderForm />} />

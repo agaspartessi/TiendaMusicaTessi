@@ -23,7 +23,7 @@ const ItemListContainer = () => {
               docs.push({ ...doc.data(), id: doc.id });
             });
             setProducts(docs);
-            if (category.categoryId === undefined) {
+            if (clothing === undefined) {
               setProducts(docs);
 
             } else {

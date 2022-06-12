@@ -1,14 +1,22 @@
 
-.item-product{
-    margin: 5%;
+
+/* Estilos Item */
+.card-item {
+  margin: 0.5rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
 }
-
-.tamanioimagen{
-    height: 150px;
-    width: 150px;
+.card-item:hover {
+color: rgb(110, 114, 113);
+box-shadow: 3px 3px 3px 3px rgba(110, 114, 113, 0.637) ;
 }
-
-
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
 
 /* Estilos Formulario Compra */
 .form{
@@ -36,4 +44,17 @@
 h3 a{
   text-decoration: none;
   color: #6e8f6e;
+}
+
+
+
+/*No se utilizan*/
+
+.item-product{
+  margin: 5%;
+}
+
+.tamanioimagen{
+  height: 20rem;
+  width: auto;
 }

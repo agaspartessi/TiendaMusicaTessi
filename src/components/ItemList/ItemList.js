@@ -4,11 +4,10 @@ import "./ItemList.css";
 
 const ItemList = ({ products }) => {
     return (
-        <div className="item-list">
-            {products.map((prod) => (
+      products.map((prod) => (
                 <Item product={prod} key={prod.id} />
-            ))}
-        </div>
+            ))
+        
     );
 };
 

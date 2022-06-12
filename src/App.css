@@ -53,5 +53,13 @@
 
 }
 
+.titulo-principal {
+  margin-top: 2rem;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 4rem;
+  color: rgb(110, 114, 113);
+}
 
 

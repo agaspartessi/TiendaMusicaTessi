@@ -1,8 +1,9 @@
 .cards-productos {
-    margin: 2rem;
-    display: flex;
-    flex-wrap: grid;
-    justify-content: space-around;
-    align-items: center;
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   }
+
 
