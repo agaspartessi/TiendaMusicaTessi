@@ -58,55 +58,5 @@ export default function Cart() {
    
         
     )
-    
-/*
-    return (
-        <>
-       
-        <h2 className="alineacion">Mi carrito de compras</h2>
 
-        {}
-
-        {cart.length >= 1 ?  cart.map((c) => (
-            <div className="colorfondocarrito" key={c.id}>
-                <ul className="colorfondocarrito">
-                    <li>
-                        <b>Producto:</b> {c.name} | 
-                        <b> Precio:</b> $ {c.price} | 
-                        <b> Cantidad:</b> {c.count} | 
-                        <b> Total:</b> $ {c.price * c.count}  
-                        <button className="" onClick={() => removerItem(c.id)}> Remover </button>                    
-                        {c.stock < c.count  ?  (<p style={{color:'red', textAlign: 'center'}}>
-                                                No hay suficiente stock de este producto {noStock=true}</p>                                                                                    
-                                            ) : ( <p></p>
-                        )}
-                    </li>
-                </ul>  
-            </div>))   : 
-
-            <div className="alineacion">
-                <h2>Tu Carrito está vacío</h2>
-                <Link to= {"/"} >Ir a Tienda</Link>
-            </div>
-        }
-
-        {cart.length >= 1 ? 
-            <div className="alineacion">
-                <p><b>Precio Total: </b>$ {precioTotal}</p>
-                <p><b>Cantidad Total: </b>{cantidadTotal()}</p>  
-                <Link to= {"/orderform"}>        
-               <button type="button" className="btn btn-success">Comprar</button>   
-                </Link>  
-                <br></br>
-                <br></br>
-                <button className="btn btn-danger" onClick={() => vaciarCarrito()}>
-              Vaciar carrito
-            </button>        
-            </div>  :
-            <div></div>     
-        }
-        </>
-   
-        
-    ) */
 }

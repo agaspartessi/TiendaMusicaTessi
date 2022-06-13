@@ -49,11 +49,7 @@ const ItemDetailContainer = () => {
           </>
       )
 
-  /*  return(
-      <div className="card-producto">
-        <ItemDetail item={items}/>
-      </div>
-    );  */
+
 }
 
 export default ItemDetailContainer;

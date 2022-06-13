@@ -1,21 +1,73 @@
-.form{
-    margin: auto;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .inputContainer{
-    width: 30%;
-  }
-  .formButton{
-    background-color: rgb(177, 2, 2);
-    border: 1px solid rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
-    border-radius: 0.3rem;
-    margin-bottom: 50px;
-  }
+.formulario-cliente{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: auto;
+  padding-top: 0%;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  background-color: #7e7fcb;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 7px;
+}
+
+label{
+  float: left;
+  width: 250px;
+  text-decoration: solid;
+}
+
+input{
+  width: 250px;
+}
+
+form div{
+  padding: 2px;
+}
+
+.formulario-compras-container{
+  display: flex;
+  align-items: flex-start;
+}
+
+.cart-on-checkout{
+  display: flex;
+  flex-direction: column;
+  background-color: #cb997e;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 7px;
+  margin: 15px;
+}
+
+.div-cart-checkout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-formulario{
+  width: 100%;
+  border: rgb(167, 91, 167);
+  border-style: solid;
+  border-radius: 5px;
+  color: rgb(167, 91, 167);
+  background-color: white;
+  font-size: medium;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.button-formulario:hover{
+  background-color: whitesmoke;
+  color: rgb(100, 41, 100);
+}

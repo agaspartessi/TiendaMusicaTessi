@@ -1,136 +1,95 @@
-import "./OrderForm.css";
-import React, { useState, useContext } from "react";
+import React, { useContext, useState } from 'react';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "../../firebase/firebaseConfig";
 import {CartContext} from "../../Context/CartContext";
-import { Link } from "react-router-dom";
-
-const initialState = {
-  name: "",
-  lastName: "",
-  email: "",
-  tel: "",
-};
+import { db } from "../../firebase/firebaseConfig";
+import "./OrderForm.css";
 
 
-const OrderForm = () => {
+
+export default function OrderForm(){
+    
     const { cart, precioTotal, vaciarCarrito } = useContext(CartContext);
 
-  const [userInfo, setUserInfo] = useState(initialState);
-  const [orderStatus, setOrderStatus] = useState(null);
-  const [orderId, setOrderId] = useState(null);
+    const [nombre, setNombre] =useState("");
+    const [telefono, setTelefono] =useState("");
+    const [correo, setCorreo] =useState("");
+    const [corroboroCorreo, setCorroboroCorreo] =useState("")
 
-  const getInfo = (e) => {
-    const { value, name } = e.target;
-    setUserInfo({ ...userInfo, [name]: value });
-  };
+    const inputNombreChange = event => setNombre(event.target.value);
+    const inputTelefonoChange = event => setTelefono(event.target.value);
+    const inputCorreoChange = event => setCorreo(event.target.value);
+    const inputCorroboroCorreoChange = event => setCorroboroCorreo(event.target.value);
+    
 
-  const orderConfirmed = () => {
-    setUserInfo(initialState);
-    vaciarCarrito();
-    setOrderStatus("confirmed");
-  };
-
-  const createOrder = async () => {
-    setOrderStatus("processing");
-    const order = {
-      productsOrder: cart.map((prod) => {
-        return {
-          id: prod.id,
-          name: prod.name, 
-          price: prod.price, 
-          quantity: prod.count,
-          totalProducPrice: prod.count * prod.price,
-        };
-      }),
-      date: serverTimestamp(),
-      userInfo: userInfo,
-      total: precioTotal,
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if(correo === corroboroCorreo){
+            nuevaOrden();
+            vaciarCarrito();
+            e.target.reset();
+        }
+        else{
+            alert("El correo electrónico no coincide en ambos campos.");
+        }
     };
 
-    const collectionRef = collection(db, "orders");
-    setOrderId((await addDoc(collectionRef, order)).id);
-    orderConfirmed(orderId);
-  };
+    const nuevaOrden = () => {
 
-  if (orderStatus === "confirmed") {
-    return (
-      <div className="d-flex justify-content-between flex-column align-items-center">
-        <h1>CONFIRMACION</h1>
-        <div className="mb-5">Su pedido ha sido enviado correctamente</div>
-        <h3>
-          Nro orden: <strong>{orderId}</strong>
-        </h3>
-        <h3>
-          <Link to="/">Volver al Catalogo</Link>
-        </h3>
-      </div>
-    );
-  } else if (orderStatus === "processing") {
-    return (
-      <div className="d-flex justify-content-center">
-        <h1>Procesando</h1>
-      </div>
-    );
-  }
+        const fecha = serverTimestamp();
+        const orden = {
+            buyer: { nombre, telefono, correo },
+            items: cart,
+            date: fecha,
+            total: precioTotal,
+        };
 
-  return (
-    <>
-      <div className="form">
-        <div className="form-floating mb-3 inputContainer">
-          <input
-            type="text"
-            name="name"
-            value={userInfo.name}
-            onChange={getInfo}
-            className="form-control"
-            id="floatingName"
-            placeholder="Name"
-          />
-          <label htmlFor="floatingName">Nombre</label>
-        </div>
-        <div className="form-floating mb-3 inputContainer">
-          <input
-            type="text"
-            name="lastName"
-            value={userInfo.lastName}
-            onChange={getInfo}
-            className="form-control"
-            id="floatingLastName"
-            placeholder="Last name"
-          />
-          <label htmlFor="floatingLastName">Apellido</label>
-        </div>
-        <div className="form-floating mb-3 inputContainer">
-          <input 
-            type="text"
-            name="email"
-            value={userInfo.email}
-            onChange={getInfo}
-            className="form-control"
-            id="floatingAddress"
-            placeholder="Email"
-          />
-          <label htmlFor="floatingAddress">Email</label>
-        </div>
-        <div className="form-floating mb-3 inputContainer">
-          <input
-            type="text"
-            name="tel"
-            value={userInfo.tel}
-            onChange={getInfo}
-            className="form-control"
-            id="floatingTel"
-            placeholder="Tel"
-          />
-          <label htmlFor="floatingTel">Telefono</label>
-        </div>
-        <button className="formButton" onClick={() => createOrder()}>
-          Enviar Pedido
-        </button>
-      </div>
-    </>
-  );
-};
+        const ordenes = collection(db, "orders");
+        addDoc(ordenes, orden).then(doc => {
+            alert(`Su pedido fue realizado con éxito, el id de su compra es: ${doc.id}`);
+        }).catch(error => {
+            console.log(error);
+        });
+    };
 
-export default OrderForm;
+
+    return(
+        <div className='formulario-compras-container'>
+            <div className='formulario-cliente'>
+                <h1>Datos de contacto</h1>
+                <form onSubmit={ onSubmit }>
+                    <div>
+                        <div>
+                        <label>Nombre y apellido:</label>
+                        </div>
+                        <div>
+                        <input value={ nombre } onChange={ inputNombreChange } type="text" placeholder='Ingrese nombre y apellido' required></input>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>Teléfono de contacto:</label>
+                        </div>
+                        <div>
+                            <input value={ telefono } onChange={ inputTelefonoChange } type="text" placeholder='Ingrese Telefono' required></input>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>Correo electrónico:</label>
+                        </div>
+                        <div>
+                            <input value={ correo } onChange= { inputCorreoChange } type="email" placeholder='Ingresa tu correo' required></input>
+                        </div>
+                        <div>
+                            <label>Repita su correo electrónico:</label>
+                        </div>
+                        <div>
+                            <input value={ corroboroCorreo } onChange={ inputCorroboroCorreoChange } type="email" placeholder='Volve a ingresarlo' required></input>
+                        </div>
+                    </div>
+                    <button className='button-formulario' type='submit' >Enviar y finalizar compra</button>
+                </form>
+            </div>
+        </div>
+    )
+}
