@@ -31,7 +31,7 @@ export default function CartWidget () {
                         icon={faBagShopping} 
                         style={{fontSize:36, color:'rgb(110, 114, 113)'}} 
                         className="icono-fontawesome"/>               
-                    <span className="" >{cantidadTotal()}</span>
+                    <span className="numero" >{cantidadTotal()}</span>
                 </Link>
             </div>)
         }

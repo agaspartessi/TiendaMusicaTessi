@@ -1,3 +1,15 @@
+.numero {
+  height: 22px;
+  width: 22px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: rgb(110, 114, 113) !important;
+  color:#fff !important;
+  margin: 1rem;
+}
+
 .alineacion{
     text-align: center;
 }
